@@ -1,130 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Go Tailwind - Digital Solutions for Startups</title>
-  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <style>
-    #animated-word {
-      transition: opacity 0.3s ease-in-out;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoStartup - Tailwind CSS Template</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.word-cycle span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  animation: wordCycle 12s infinite;
+}
+.word-cycle span:nth-child(1) { animation-delay: 0s; }
+.word-cycle span:nth-child(2) { animation-delay: 3s; }
+.word-cycle span:nth-child(3) { animation-delay: 6s; }
+.word-cycle span:nth-child(4) { animation-delay: 9s; }
+@keyframes wordCycle {
+  0%  { opacity: 0; transform: translateY(30px); }
+  8%  { opacity: 1; transform: translateY(0); }
+  25% { opacity: 1; transform: translateY(0); }
+  33% { opacity: 0; transform: translateY(-30px); }
+  100%{ opacity: 0; transform: translateY(-30px); }
+}
+</style>
 </head>
 
-<body class="bg-slate-900 text-gray-800">
-  <header class="fixed top-0 w-full bg-slate-950 shadow-md z-50 backdrop-blur-sm bg-opacity-98">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 md:h-20">
-        
-        <div class="flex items-center gap-3">
-          <img src="images/logo-dark.svg" alt="Go Tailwind Logo" class="h-48 w-48 md:h-56 md:w-56 hover:opacity-80 transition-opacity duration-300">
-        </div>
-        <ul class="hidden md:flex gap-8 font-medium items-center">
-          <li><a href="#home" class="text-slate-300 hover:text-blue-400 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-400">Home</a></li>
-          <li><a href="#features" class="text-slate-300 hover:text-blue-400 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-400">Features</a></li>
-          <li class="relative group">
-            <button class="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors duration-200">
-              Pages
-              <i class="fa-solid fa-chevron-down text-sm"></i>
-            </button>
-            <div class="absolute left-0 mt-3 w-52 bg-slate-900 rounded-md shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transform -translate-y-1 group-hover:translate-y-0 transition-all duration-200 z-50">
-              <ul class="py-2">
-                <li><a href="#" class="block px-4 py-2 text-slate-300 hover:bg-slate-800 hover:text-blue-400">Blog Grids</a></li>
-                <li><a href="#" class="block px-4 py-2 text-slate-300 hover:bg-slate-800 hover:text-blue-400">Blog Details</a></li>
-                <li><a href="#" class="block px-4 py-2 text-slate-300 hover:bg-slate-800 hover:text-blue-400">404 Error</a></li>
-                <li><a href="#" class="block px-4 py-2 text-slate-300 hover:bg-slate-800 hover:text-blue-400">Sign In</a></li>
-                <li><a href="#" class="block px-4 py-2 text-slate-300 hover:bg-slate-800 hover:text-blue-400">Sign Up</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#support" class="text-slate-300 hover:text-blue-400 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-400">Support</a></li>
-        </ul>
-        <div class="hidden md:flex items-center gap-4">
-          <a href="#" class="px-4 py-2 rounded-md bg-transparent border border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors duration-200">Sign In</a>
-          <a href="#" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200">Sign Up</a>
-          <button title="Toggle theme" class="ml-2 text-slate-300 hover:text-blue-400 transition-colors duration-200">
-            <i class="fa-solid fa-sun"></i>
-          </button>
-        </div>
-        <button class="md:hidden">
-          <i class="fa-solid fa-bars text-2xl text-slate-300 hover:text-blue-400 transition-colors duration-300"></i>
-        </button>
+<body class="bg-gradient-to-r from-[#0b1120] via-[#0e1b34] to-[#0b1120] text-white">
+
+<header class="fixed w-full top-0 z-50 bg-[#0b1120]/95 backdrop-blur-md border-b border-white/5">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+     
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-tr from-blue-500 to-indigo-600 rotate-45 rounded-lg"></div>
+        <h1 class="text-2xl font-bold">GoStartup</h1>
       </div>
-    </nav>
-  </header>
 
-  <section id="home" class="pt-20 pb-12 px-4 bg-slate-900 md:pt-32 md:pb-20">
-    <div class="max-w-7xl mx-auto">
-      
-      <div class="md:grid md:grid-cols-2 md:gap-12 md:items-center">
-        
-        <div class="mb-8 md:mb-0">
-          <div class="inline-flex items-center gap-2 bg-blue-900 px-4 py-2 rounded-full mb-6">
-            <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-            <span class="text-sm font-semibold text-white">Tailwind Template for Startups</span>
-          </div>
-          
-          <h1 class="text-4xl font-bold leading-tight mb-6 text-white md:text-5xl lg:text-6xl">
-            Digital Solutions for Your <span id="animated-word" class="text-white underline decoration-2 underline-offset-4">Startup</span>
-          </h1>
-          
-          <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl">
-            Handcrafted Tailwind CSS template for your next - Startup, Business, Agency or SaaS Website. Comes with refreshing design and everything you need to kickstart your next web project.
-          </p>
-          
-          <div class="flex gap-4 mb-10 flex-wrap">
-            <button class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3.5 rounded-lg hover:-translate-y-0.5 hover:shadow-lg font-semibold inline-flex items-center gap-2 transition-all duration-300">
-              Get Started
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-            <a href="#how-it-works" class="flex items-center gap-2 text-white font-semibold hover:text-blue-500 transition-colors duration-300 focus:outline-none focus:ring-0">
-              <span>▶</span>
-              How it Works
-            </a>
+      <nav class="hidden lg:flex gap-8 text-gray-300 items-center">
+        <a href="#home" class="text-blue-500 hover:text-white transition">Home</a>
+        <a href="#features" class="hover:text-white transition">Features</a>
+        <div class="relative group">
+          <button class="hover:text-white transition flex items-center gap-1">
+            Pages
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+         
+          <div class="absolute top-full left-0 mt-2 w-48 bg-[#1a2332] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="blog-grids.html" class="block px-4 py-3 hover:bg-white/10 rounded-t-lg">Blog Grids</a>
+            <a href="blog-details.html" class="block px-4 py-3 hover:bg-white/10">Blog Details</a>
+            <a href="#" class="block px-4 py-3 hover:bg-white/10">404 Error</a>
+            <a href="#" class="block px-4 py-3 hover:bg-white/10">Sign In</a>
+            <a href="#" class="block px-4 py-3 hover:bg-white/10 rounded-b-lg">Sign Up</a>
           </div>
         </div>
+        <a href="#support" class="hover:text-white transition">Support</a>
+      </nav>
 
-        <div class="relative w-full max-w-3xl mx-auto">
+  <div class="flex gap-4 items-center">
+    <button class="px-5 py-2 bg-blue-600 rounded-lg hover:bg-blue-700">Sign In</button>
+    <button class="px-5 py-2 bg-white text-black rounded-lg hover:bg-gray-100">Sign Up</button>
+    <span class="text-xl cursor-pointer">☀︎</span>
+  </div>
 
-  
-    <div class="rounded-3xl overflow-hidden shadow-2xl">
-     <img src="images/image-2.jpg"
-         alt="Team discussion"
-         class="w-full h-[520px] object-cover">
+</header>
+
+<section id="home" class="container mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center">
+
+  <div>
+    <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm text-gray-300 mb-8">
+      <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+      Tailwind Template for Startups
     </div>
-       <div class="absolute -bottom-12 -left-12 w-2/3 rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
-        <img src="images/image-1.jpg"
-         alt="Developer coding"
-         class="w-full h-[420px] object-cover">
-       </div>
+
+    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+  Digital Solutions for Your
+  <span class="block mt-2 relative h-[1.2em]">
+    <span class="word-cycle">
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">Startup</span>
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">Business</span>
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">Agency</span>
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">SaaS</span>
+    </span>
+  </span>
+</h1>
+
+    <p class="text-gray-400 mb-10 max-w-xl">
+      Handcrafted Tailwind CSS template for your next - Startup,
+      Business, Agency or SaaS Website. Comes with refreshing design
+      and everything you need to kickstart your next web project.
+    </p>
+
+    <div class="flex gap-6">
+      <button class="px-7 py-3 bg-blue-600 rounded-lg shadow-lg shadow-blue-600/30 hover:bg-blue-700">
+        Get Started →
+      </button>
+      <button class="text-gray-300 hover:text-white">▶ How it Work</button>
+    </div>
+  </div>
+
+ <div class="relative w-[500px] h-[500px]">
+
+ <div class="relative w-[600px] h-[550px]">
+
+  <div class="absolute top-0 right-0 w-[520px] h-[520px] rounded-2xl overflow-hidden">
+    <img src="images/image-2.jpg" class="w-full h-full object-cover" alt="image 2">
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-[380px] h-[420px] rounded-2xl overflow-hidden shadow-2xl z-10">
+    <img src="images/image-1.jpg" class="w-full h-full object-cover" alt="image 1">
+  </div>
+
+  <div class="absolute bottom-12 right-20 w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-800 rounded-full z-20 opacity-90 blur-sm"></div>
 
 </div>
 
+</section>
 
-      </div>
-    </div>
-  </section>
+<section id="features" class="container mx-auto px-6 py-24 text-center">
 
-  <section id="features" class="py-16 px-4 bg-slate-900 relative overflow-hidden md:py-24">
-    <div class="max-w-6xl mx-auto relative z-10">
-      
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4 text-white md:text-4xl lg:text-5xl">
-          Our Unique & Awesome<br>Core Features
-        </h2>
-        <p class="text-lg text-slate-400 max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
-        </p>
-      </div>
+  <div class="mb-4">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">FEATURES</span>
+  </div>
 
-      <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none z-0">
-        <h3 class="text-7xl font-bold text-white whitespace-nowrap md:text-8xl lg:text-9xl">FEATURES</h3>
-      </div>
+  <h3 class="text-4xl font-bold mb-4">Our Unique & Awesome Core Features</h3>
+  <p class="text-gray-400 mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
 
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         
         <div class="text-center group">
           <div class="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-slate-800 group-hover:bg-blue-600 transition-colors duration-300">
@@ -188,348 +198,666 @@
 
       </div>
     </div>
-  </section>
+</section>
 
-  <section class="py-16 px-4 bg-slate-900 relative overflow-hidden md:py-24">
-    <div class="max-w-6xl mx-auto relative z-10">
-      
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-white md:text-4xl lg:text-5xl">
-          Know Details About<br>Our Company
-        </h2>
-        <p class="text-lg text-slate-400 max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
-        </p>
-      </div>
+<section id="about" class="container mx-auto px-6 py-24">
 
-      <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none z-0">
-        <h3 class="text-7xl font-bold text-white whitespace-nowrap md:text-8xl lg:text-9xl">ABOUT US</h3>
-      </div>
-
-      <div class="flex flex-col border-b border-slate-700 mb-8 md:flex-row md:justify-center">
-        <button class="px-8 py-4 text-base font-semibold text-white border-b-2 border-blue-600 md:px-16">
-          About Us
-        </button>
-        <button class="px-8 py-4 text-base font-semibold text-slate-400 border-b-2 border-transparent hover:text-white transition-colors md:px-16">
-          Our Mission
-        </button>
-        <button class="px-8 py-4 text-base font-semibold text-slate-400 border-b-2 border-transparent hover:text-white transition-colors md:px-16">
-          Our Vision
-        </button>
-      </div>
-
-      <div class="grid gap-8 items-center md:grid-cols-2">
-        
-        <div>
-          <p class="text-base text-slate-400 mb-4 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-          </p>
-          <p class="text-base text-slate-400 mb-6 leading-relaxed">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-          </p>
-          <button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all">
-            Learn More
-          </button>
-        </div>
-
-        <div class="rounded-xl overflow-hidden shadow-2xl">
-          <img src="images/image-4.jpg" alt="About our company" class="w-full h-72 object-cover md:h-80 lg:h-96">
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 px-4 bg-slate-900 md:py-20">
-    <div class="max-w-6xl mx-auto">
-      
-      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-
-  <div class="text-center">
-    <div class="w-full max-w-[320px] h-[320px] mx-auto mb-6 rounded-xl overflow-hidden">
-      <img src="images/image-1 (2).jpg"
-           alt="Olivia Andrium"
-           class="w-full h-full object-cover">
-    </div>
-    <h3 class="text-2xl font-bold text-white mb-2">Olivia Andrium</h3>
-    <p class="text-base text-slate-400">Project Manager</p>
+  <div class="mb-4 text-center">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">ABOUT US</span>
   </div>
 
-  <div class="text-center">
-    <div class="w-full max-w-[320px] h-[320px] mx-auto mb-6 rounded-xl overflow-hidden">
-      <img src="images/image-2 (2).jpg"
-           alt="Jemse Kemorun"
-           class="w-full h-full object-cover">
-    </div>
-    <h3 class="text-2xl font-bold text-white mb-2">Jemse Kemorun</h3>
-    <p class="text-base text-slate-400">Project Designer</p>
+  <h3 class="text-4xl font-bold text-center mb-4">
+    Know Details About Our Company
+  </h3>
+
+  <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
+
+  <div class="flex justify-center gap-12 mb-10 text-gray-400 border-b border-white/10">
+    <button class="tab tab-active pb-4" onclick="switchTab(0)">About Us</button>
+    <button class="tab pb-4" onclick="switchTab(1)">Our Mission</button>
+    <button class="tab pb-4" onclick="switchTab(2)">Our Vision</button>
   </div>
 
-  <div class="text-center">
-    <div class="w-full max-w-[320px] h-[320px] mx-auto mb-6 rounded-xl overflow-hidden">
-      <img src="images/image-3.jpg"
-           alt="Avi Pestarica"
-           class="w-full h-full object-cover">
+ <div class="tab-content pt-12 grid md:grid-cols-2 gap-16 items-center">
+
+  <div class="relative w-full h-[580px]">
+
+    <div class="absolute top-0 left-0 w-[420px] h-[540px] rounded-2xl overflow-hidden">
+      <img src="images/image-1 (1).jpg" class="w-full h-full object-cover" alt="image 1">
     </div>
-    <h3 class="text-2xl font-bold text-white mb-2">Avi Pestarica</h3>
-    <p class="text-base text-slate-400">Web Designer</p>
+
+    <div class="absolute top-10 left-32 w-[320px] h-[480px] rounded-2xl overflow-hidden shadow-2xl z-10">
+      <img src="images/image-2 (1).jpg" class="w-full h-full object-cover grayscale" alt="image 2">
+    </div>
+
+  </div>
+  <div>
+    <h4 class="text-3xl font-bold mb-6">
+      We are Creative Digital Agency Based in USA
+    </h4>
+    <p class="text-gray-400 mb-6">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Fusce condimentum sapien ac leo cursus dignissim. In ac
+      lectus vel orci accumsan ultricies at in libero accumsan.
+    </p>
+    <p class="text-gray-400 mb-6">
+      Phasellus ex massa, facilisis ac vestibulum eget, ultrices
+      quis nulla. Integer vitae magna lacus. Sed venenatis
+      auctor dolor.
+    </p>
+    <p class="text-gray-400">
+      Phasellus ex massa, facilisis ac vestibulum eget, ultrices
+      quis nulla. Integer vitae magna lacus. Sed venenatis
+      auctor dolor.
+    </p>
   </div>
 
 </div>
 
-    </div>
-  </section>
+</section>
 
-  <section class="py-16 px-4 bg-slate-900 relative overflow-hidden md:py-24">
-    <div class="max-w-6xl mx-auto relative z-10">
-      
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-white md:text-4xl lg:text-5xl">
-          Explore Our Latest<br>Case Studies
-        </h2>
-        <p class="text-lg text-slate-400 max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
-        </p>
+<section id="team" class="container mx-auto px-6 py-24 text-center">
+
+  <div class="mb-4">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">OUR TEAM</span>
+  </div>
+
+  <h3 class="text-4xl font-bold mb-4">
+    Meet With Our Creative Dedicated Team
+  </h3>
+
+  <p class="text-gray-400 mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-12">
+
+    <div class="group">
+      <div class="overflow-hidden rounded-xl mb-6">
+        <img src="images/image-1 (2).jpg"
+             class="rounded-xl mx-auto w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="Team Member">
       </div>
-
-      <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none z-0">
-        <h3 class="text-7xl font-bold text-white whitespace-nowrap md:text-8xl lg:text-9xl">PORTFOLIO</h3>
-      </div>
-
+      <h4 class="text-xl font-semibold">Olivia Andrium</h4>
+      <p class="text-gray-400">Project Manager</p>
     </div>
-  </section>
 
-  <section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="group">
+      <div class="overflow-hidden rounded-xl mb-6">
+        <img src="images/image-2 (2).jpg"
+             class="rounded-xl mx-auto w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="Team Member">
+      </div>
+      <h4 class="text-xl font-semibold">Jemse Kemorun</h4>
+      <p class="text-gray-400">Project Designer</p>
+    </div>
+
+    <div class="group">
+      <div class="overflow-hidden rounded-xl mb-6">
+        <img src="images/image-3.jpg"
+             class="rounded-xl mx-auto w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="Team Member">
+      </div>
+      <h4 class="text-xl font-semibold">Avi Pestarica</h4>
+      <p class="text-gray-400">Web Designer</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="portfolio" class="container mx-auto px-6 py-24">
+
+  <div class="mb-4 text-center">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">PORTFOLIO</span>
+  </div>
+
+  <h3 class="text-4xl font-bold text-center mb-4">
+    Explore Our Latest Case Studies
+  </h3>
+
+  <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
+
+  <div class="flex justify-center gap-6 mb-12 text-gray-400 flex-wrap">
+    <button class="px-6 py-2 rounded-lg bg-blue-600 text-white">All</button>
+    <button class="px-6 py-2 rounded-lg hover:bg-white/10">Branding Strategy</button>
+    <button class="px-6 py-2 rounded-lg hover:bg-white/10">Digital Experiences</button>
+    <button class="px-6 py-2 rounded-lg hover:bg-white/10">eCommerce</button>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+    <div class="group relative overflow-hidden rounded-xl">
+      <img src="images/image-1 (3).jpg"
+           class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="Portfolio">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+        <h4 class="text-2xl font-bold mb-2">Photo Retouching</h4>
+        <p class="text-gray-300">Branded Ecommerce</p>
+      </div>
+    </div>
+
+    <div class="group relative overflow-hidden rounded-xl">
+      <img src="images/image-3 (1).jpg"
+           class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="Portfolio">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+        <h4 class="text-2xl font-bold mb-2">Data Analytics</h4>
+        <p class="text-gray-300">Digital Experiences</p>
+      </div>
+    </div>
+
+    <div class="group relative overflow-hidden rounded-xl">
+      <img src="images/image-2 (4).jpg"
+           class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="Portfolio">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+        <h4 class="text-2xl font-bold mb-2">Brand Identity</h4>
+        <p class="text-gray-300">Branding Strategy</p>
+      </div>
+    </div>
+
+    <div class="group relative overflow-hidden rounded-xl">
+      <img src="images/image-4.jpg"
+           class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="Portfolio">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+        <h4 class="text-2xl font-bold mb-2">Web Development</h4>
+        <p class="text-gray-300">Digital Experiences</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center">
+    <button class="px-8 py-3 border border-blue-600 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white transition">
+      See More Projects
+    </button>
+  </div>
+
+</section>
+
+<section class="container mx-auto px-6 py-24">
+
+  <div class="mb-4 text-center">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">TESTIMONIAL</span>
+  </div>
+
+  <h3 class="text-4xl font-bold text-center mb-4">
+    What Our Clients Say About Us
+  </h3>
+
+  <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
+
+  <div class="grid gap-8 items-center md:grid-cols-2">
         
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Streamline Your Workflow</h2>
-          <p class="text-slate-300 mb-8 leading-relaxed">
-            Build beautiful, high-converting web experiences. Our Tailwind CSS components come with everything you need - from layouts and forms to advanced interactive features.
-          </p>
+  <div>
+    <p class="text-base text-slate-400 mb-4 leading-relaxed">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim. In ac lectus vel orci accumsan ultricies at in libero accumsan Lorem Ipsum has been the industry's standard
+    </p>
 
-          <div class="space-y-6">
-            <div class="flex gap-4">
-              <div class="flex-shrink-0">
-                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white font-bold">1</div>
-              </div>
-              <div>
-                <h3 class="font-semibold text-lg mb-2 text-white">Choose Template</h3>
-                <p class="text-slate-300">Select from our beautiful pre-designed templates</p>
-              </div>
-            </div>
+    <p class="text-base text-slate-400 mb-4 leading-relaxed">
+      <span class="font-bold text-white">Deniyal Shifer</span><br>
+      Founder @democompany.
+    </p>
+  </div>
 
-            <div class="flex gap-4">
-              <div class="flex-shrink-0">
-                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white font-bold">2</div>
-              </div>
-              <div>
-                <h3 class="font-semibold text-lg mb-2 text-white">Customize Design</h3>
-                <p class="text-slate-300">Easily customize colors, fonts, and layouts with Tailwind</p>
-              </div>
-            </div>
+  <div class="rounded-xl overflow-hidden shadow-2xl">
+    <img src="images/image-1 (4).jpg" 
+         alt="About our company" 
+         class="w-full h-72 object-cover md:h-80 lg:h-96">
+  </div>
 
-            <div class="flex gap-4">
-              <div class="flex-shrink-0">
-                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white font-bold">3</div>
-              </div>
-              <div>
-                <h3 class="font-semibold text-lg mb-2 text-white">Launch & Monitor</h3>
-                <p class="text-slate-300">Deploy your site and track performance in real-time</p>
-              </div>
-            </div>
-          </div>
-        </div>
+</div>
 
-        <div class="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-          <img src="images/image-4.jpg" alt="How it works" class="w-full h-96 object-cover hover:scale-105 transition-transform duration-300">
-        </div>
 
-      </div>
+</section>
+
+<section class="container mx-auto px-6 py-24 text-center">
+
+  <h3 class="text-3xl font-bold mb-4">
+    Trusted by Global Brands
+  </h3>
+
+  <p class="text-gray-400 mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-50">
+    <div class="flex justify-center">
+      <div class="text-4xl font-bold text-gray-400">UIDECK</div>
     </div>
-  </section>
-
-  <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Simple, Transparent Pricing</h2>
-        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
-          Choose the perfect plan for your needs
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <div class="group bg-slate-800 border border-slate-700 p-8 rounded-xl hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-          <h3 class="text-2xl font-bold mb-2 text-white">Starter</h3>
-          <p class="text-slate-300 mb-6">Perfect for beginners</p>
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-white">$29</span>
-            <span class="text-slate-400">/month</span>
-          </div>
-          <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 mb-6 transition-colors duration-300">
-            Get Started
-          </button>
-          <ul class="space-y-3 text-slate-300">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> 5 Projects</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Basic Support</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> 1 GB Storage</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-times text-slate-600"></i> Advanced Analytics</li>
-          </ul>
-        </div>
-
-        <div class="group bg-blue-600 text-white p-8 rounded-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 relative border-2 border-blue-500 md:scale-105">
-          <div class="absolute top-4 right-4 bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-semibold">
-            Most Popular
-          </div>
-          <h3 class="text-2xl font-bold mb-2">Professional</h3>
-          <p class="text-blue-100 mb-6">For growing teams</p>
-          <div class="mb-6">
-            <span class="text-4xl font-bold">$79</span>
-            <span class="text-blue-100">/month</span>
-          </div>
-          <button class="w-full bg-slate-600 text-white py-3 rounded-lg font-semibold hover:bg-slate-700 mb-6 transition-colors duration-300">
-            Get Started
-          </button>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check"></i> 50 Projects</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check"></i> Priority Support</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check"></i> 100 GB Storage</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check"></i> Advanced Analytics</li>
-          </ul>
-        </div>
-        <div class="group bg-slate-800 border border-slate-700 p-8 rounded-xl hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-          <h3 class="text-2xl font-bold mb-2 text-white">Enterprise</h3>
-          <p class="text-slate-300 mb-6">For large organizations</p>
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-white">Custom</span>
-          </div>
-          <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 mb-6 transition-colors duration-300">
-            Contact Sales
-          </button>
-          <ul class="space-y-3 text-slate-300">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Unlimited Projects</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> 24/7 Dedicated Support</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Unlimited Storage</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Custom Solutions</li>
-          </ul>
-        </div>
-
-      </div>
+    <div class="flex justify-center">
+      <div class="text-4xl font-bold text-gray-400">TailAdmin</div>
     </div>
-  </section>
+    <div class="flex justify-center">
+      <div class="text-4xl font-bold text-gray-400">GrayGrids</div>
+    </div>
+    <div class="flex justify-center">
+      <div class="text-4xl font-bold text-gray-400">LineIcons</div>
+    </div>
+    <div class="flex justify-center">
+      <div class="text-4xl font-bold text-gray-400">PlainAdmin</div>
+    </div>
+  </div>
 
-  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Looking for a company solution?</h2>
-      <p class="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
-        Contact our team to get a quote and discuss how we can help your business grow.
-      </p>
-      <button class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-lg hover:-translate-y-0.5 hover:shadow-lg font-semibold text-lg inline-flex items-center gap-2 transition-all duration-300">
-        Contact Our Team
-        <i class="fa-solid fa-arrow-right"></i>
+</section>
+
+<section id="pricing" class="container mx-auto px-6 py-24">
+
+  <div class="mb-4 text-center">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">PRICING PLANS</span>
+  </div>
+
+  <h3 class="text-4xl font-bold text-center mb-4">
+    Affordable Pricing With Simple Plans
+  </h3>
+
+  <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="bg-white/5 p-8 rounded-xl hover:bg-white/10 transition">
+      <h4 class="text-2xl font-bold mb-2">Free</h4>
+      <p class="text-gray-400 mb-6">The most basic plan</p>
+      <div class="mb-8">
+        <span class="text-5xl font-bold">$0</span>
+        <span class="text-gray-400">/month</span>
+      </div>
+      <p class="text-gray-400 mb-8">Lorem ipsum dolor sit ametion consectetur adipisc elit.</p>
+      <ul class="space-y-4 mb-8">
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">300 GB Storage</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Unlimited Photos and Videos</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-red-500">✗</span>
+          <span class="text-gray-400">Exclusive Support</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-red-500">✗</span>
+          <span class="text-gray-400">Custom Branding Strategy</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-red-500">✗</span>
+          <span class="text-gray-400">Free SEO Tools</span>
+        </li>
+      </ul>
+      <button class="w-full py-3 border border-blue-600 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white transition">
+        Join This Plan
       </button>
     </div>
-  </section>
-  <footer id="contact" class="bg-slate-950 text-slate-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid md:grid-cols-5 gap-12 mb-12">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <img src="images/logo-dark.svg" alt="GoStartup" class="h-32 w-32 md:h-40 md:w-40">
-          </div>
-          <p class="text-sm text-slate-400 mb-6 max-w-xs">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-          <div class="flex gap-4">
-            <a href="https://facebook.com" target="_blank" title="Facebook" class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-colors duration-300">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" title="Twitter" class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-colors duration-300">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" title="LinkedIn" class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-colors duration-300">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="#" title="Behance" class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-colors duration-300">
-              <i class="fa-brands fa-behance"></i>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-white font-semibold mb-4">Company</h4>
-          <ul class="space-y-3 text-sm text-slate-400">
-            <li><a href="#" class="hover:text-blue-400">Home</a></li>
-            <li><a href="#" class="hover:text-blue-400">Product</a></li>
-            <li class="flex items-center gap-2">
-              <a href="#" class="hover:text-blue-400">Careers</a>
-              <span class="ml-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">Hiring</span>
-            </li>
-            <li><a href="#" class="hover:text-blue-400">Pricing</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-white font-semibold mb-4">Support</h4>
-          <ul class="space-y-3 text-sm text-slate-400">
-            <li><a href="#" class="hover:text-blue-400">Company</a></li>
-            <li><a href="#" class="hover:text-blue-400">Press media</a></li>
-            <li><a href="#" class="hover:text-blue-400">Our Blog</a></li>
-            <li><a href="#" class="hover:text-blue-400">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-white font-semibold mb-4">Get in touch</h4>
-          <p class="text-slate-400 text-sm">Toll Free Customer Care<br><span class="text-white font-semibold">+(1) 123 456 7890</span></p>
-          <p class="mt-4 text-slate-400 text-sm">Need live support?<br><a href="mailto:support@domain.com" class="text-white font-semibold">support@domain.com</a></p>
-        </div>
-
-        <div>
-          <h4 class="text-white font-semibold mb-4">Newsletter</h4>
-          <p class="text-slate-400 text-sm mb-4">Subscribe to receive future updates</p>
-          <form class="flex items-center">
-            <input type="email" placeholder="Email address" class="flex-1 bg-slate-900 border border-slate-800 placeholder-slate-500 text-slate-200 py-3 px-4 rounded-l-md focus:outline-none" />
-            <button class="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 rounded-r-md text-white hover:from-blue-700 hover:to-blue-800">
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
-
+    <div class="bg-blue-600/20 p-8 rounded-xl border-2 border-blue-600 relative">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm">
+        POPULAR
       </div>
-
-      <div class="border-t border-slate-800 py-6 md:flex md:items-center md:justify-between">
-        <div class="flex gap-6 text-slate-400 text-sm">
-          <a href="#" class="hover:text-blue-400">English</a>
-          <a href="#" class="hover:text-blue-400">Privacy Policy</a>
-          <a href="#" class="hover:text-blue-400">Support</a>
-        </div>
-        <p class="text-slate-400 text-sm mt-4 md:mt-0">© 2025 Startup. All rights reserved.</p>
+      <h4 class="text-2xl font-bold mb-2">Basic</h4>
+      <p class="text-gray-400 mb-6">The most popular plan</p>
+      <div class="mb-8">
+        <span class="text-5xl font-bold">$29</span>
+        <span class="text-gray-400">/month</span>
       </div>
-
-      <a href="#home" aria-label="Back to top" class="hidden md:flex items-center justify-center fixed bottom-8 right-8 h-10 w-10 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700">
-        <i class="fa-solid fa-chevron-up"></i>
-      </a>
+      <p class="text-gray-400 mb-8">Lorem ipsum dolor sit ametion consectetur adipisc elit.</p>
+      <ul class="space-y-4 mb-8">
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">300 GB Storage</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Unlimited Photos and Videos</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Exclusive Support</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Custom Branding Strategy</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-red-500">✗</span>
+          <span class="text-gray-400">Free SEO Tools</span>
+        </li>
+      </ul>
+      <button class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        Join This Plan
+      </button>
     </div>
-  </footer>
 
-  <script>
-    const words = ['Business', 'Agency', 'Startup', 'SaaS'];
-    let currentIndex = 0;
-    const animatedWord = document.getElementById('animated-word');
-    
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % words.length;
-      animatedWord.style.opacity = '0';
+    <div class="bg-white/5 p-8 rounded-xl hover:bg-white/10 transition">
+      <h4 class="text-2xl font-bold mb-2">Premium</h4>
+      <p class="text-gray-400 mb-6">The most premium plan</p>
+      <div class="mb-8">
+        <span class="text-5xl font-bold">$99</span>
+        <span class="text-gray-400">/month</span>
+      </div>
+      <p class="text-gray-400 mb-8">Lorem ipsum dolor sit ametion consectetur adipisc elit.</p>
+      <ul class="space-y-4 mb-8">
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">300 GB Storage</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Unlimited Photos and Videos</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Exclusive Support</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Custom Branding Strategy</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-gray-300">Free SEO Tools</span>
+        </li>
+      </ul>
+      <button class="w-full py-3 border border-blue-600 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white transition">
+        Join This Plan
+      </button>
+    </div>
+
+  </div>
+
+  <div class="mt-12 text-center p-8 bg-white/5 rounded-xl">
+    <h4 class="text-2xl font-bold mb-3">Looking for a company solution?</h4>
+    <p class="text-gray-400 mb-6">Contact our team to get a quote.</p>
+    <button class="px-8 py-3 bg-blue-600 rounded-lg hover:bg-blue-700">
+      Contact Sales
+    </button>
+  </div>
+
+</section>
+
+<section class="container mx-auto px-6 py-24">
+
+  <div class="mb-4 text-center">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">BLOGS</span>
+  </div>
+
+  <h3 class="text-4xl font-bold text-center mb-4">
+    Latest News & Articles From Our Blog
+  </h3>
+
+  <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+    convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+    ante in maximus.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="bg-white/5 rounded-xl overflow-hidden group">
+      <div class="overflow-hidden">
+        <img src="images/image-1 (5).jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500" alt="Blog">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+          <span class="text-blue-500">Online Business</span>
+          <span>•</span>
+          <span>25 Dec, 2025</span>
+        </div>
+        <h4 class="text-xl font-semibold mb-3 group-hover:text-blue-500 transition">
+          Free advertising for your online business
+        </h4>
+        <p class="text-gray-400 text-sm">by Musharof Chy</p>
+      </div>
+    </div>
+
+    <div class="bg-white/5 rounded-xl overflow-hidden group">
+      <div class="overflow-hidden">
+        <img src="images/image-2 (5).jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500" alt="Blog">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+          <span class="text-blue-500">Ui/Ux Design</span>
+          <span>•</span>
+          <span>19 Mar, 2025</span>
+        </div>
+        <h4 class="text-xl font-semibold mb-3 group-hover:text-blue-500 transition">
+          9 simple ways to improve your design skills
+        </h4>
+        <p class="text-gray-400 text-sm">by Musharof Chy</p>
+      </div>
+    </div>
+
+    <div class="bg-white/5 rounded-xl overflow-hidden group">
+      <div class="overflow-hidden">
+        <img src="images/image-3 (2).jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500" alt="Blog">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+          <span class="text-blue-500">Web Development</span>
+          <span>•</span>
+          <span>15 Feb, 2025</span>
+        </div>
+        <h4 class="text-xl font-semibold mb-3 group-hover:text-blue-500 transition">
+          Tips to quickly improve your coding speed
+        </h4>
+        <p class="text-gray-400 text-sm">by Musharof Chy</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="support" class="container mx-auto px-6 py-24">
+
+  <div class="mb-4 text-center">
+    <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">SUPPORT</span>
+  </div>
+
+  <h3 class="text-4xl font-bold text-center mb-4">
+    Need Any Help? Say Hello
+  </h3>
+
+  <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    Donec vitae tortor aliquam ante.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-16">
+
+    <div class="space-y-8">
       
-      setTimeout(() => {
-        animatedWord.textContent = words[currentIndex];
-        animatedWord.style.opacity = '1';
-      }, 300);
-    }, 2000);
-  </script>
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center text-blue-500 flex-shrink-0">
+          📧
+        </div>
+        <div>
+          <h5 class="font-semibold mb-2">Email Address</h5>
+          <p class="text-gray-400">hello@startup.com</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center text-blue-500 flex-shrink-0">
+          📞
+        </div>
+        <div>
+          <h5 class="font-semibold mb-2">Phone Number</h5>
+          <p class="text-gray-400">+009 8754 3433 223</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center text-blue-500 flex-shrink-0">
+          📍
+        </div>
+        <div>
+          <h5 class="font-semibold mb-2">Office Location</h5>
+          <p class="text-gray-400">76/A, Green valle, California USA.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <form class="space-y-6">
+        <input type="text" placeholder="Your Name"
+               class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none">
+        <input type="email" placeholder="Email Address"
+               class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none">
+        <input type="tel" placeholder="Phone (Optional)"
+               class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none">
+        <input type="text" placeholder="Subject"
+               class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none">
+        <textarea placeholder="Message" rows="4"
+                  class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none resize-none"></textarea>
+        
+        <div class="flex items-start gap-3">
+          <input type="checkbox" class="mt-1">
+          <label class="text-sm text-gray-400">
+            I have read the terms of the Service & I accept Privacy Policy
+          </label>
+        </div>
+
+        <button type="submit" class="w-full py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="container mx-auto px-6 py-24">
+  <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-12 text-center">
+    <h3 class="text-4xl font-bold mb-4">
+      Looking for a collaboration? Get Started Today!
+    </h3>
+    <p class="text-white/80 mb-8 max-w-2xl mx-auto">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+    <button class="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition">
+      Get Started Now
+    </button>
+  </div>
+</section>
+
+<footer class="border-t border-white/10">
+  
+  <div class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-5 gap-12">
+
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-tr from-blue-500 to-indigo-600 rotate-45 rounded-md"></div>
+          <h1 class="text-xl font-semibold">GoStartup</h1>
+        </div>
+        <p class="text-gray-400 mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Company</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#" class="hover:text-white">Home</a></li>
+          <li><a href="#" class="hover:text-white">Product</a></li>
+          <li><a href="#" class="hover:text-white">Careers</a></li>
+          <li><a href="#" class="hover:text-white">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Support</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#" class="hover:text-white">Company</a></li>
+          <li><a href="#" class="hover:text-white">Press media</a></li>
+          <li><a href="#" class="hover:text-white">Our Blog</a></li>
+          <li><a href="#" class="hover:text-white">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Get in touch</h4>
+        <div class="space-y-3 text-gray-400">
+          <p class="text-sm">Toll Free Customer Care</p>
+          <p class="text-white font-semibold">+(1) 123 456 7890</p>
+          <p class="text-sm mt-4">Need live support?</p>
+          <p class="text-blue-500">hello@startup.com</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-white/10">
+      <div class="max-w-md">
+        <h4 class="font-semibold mb-4">Newsletter</h4>
+        <p class="text-gray-400 mb-4">Subscribe to receive future updates</p>
+        <div class="flex gap-2">
+          <input type="email" placeholder="Enter your email"
+                 class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none">
+          <button class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-6">
+    <div class="container mx-auto px-6 flex flex-wrap justify-between items-center gap-4 text-gray-500 text-sm">
+      <p>© 2025 GoStartup. All rights reserved</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Support</a>
+        <a href="#" class="hover:text-white">English</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+
+function switchTab(index) {
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach((tab, i) => {
+    if (i === index) {
+      tab.classList.add('tab-active');
+    } else {
+      tab.classList.remove('tab-active');
+    }
+  });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
 
 </body>
 </html>
